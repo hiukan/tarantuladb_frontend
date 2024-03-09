@@ -9,7 +9,7 @@ const Offer = ({offer, getOffers}) => {
 
     const [species, setSpecies] = useState({});
     const [seller, setSeller] = useState({});
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
 
     const getSpecies = async () => {
         try {
@@ -63,18 +63,18 @@ const Offer = ({offer, getOffers}) => {
     return (
         <>
             <tr>
-            <td><image href={species.image}/></td>
+            <td className="flex items-center justify-center"><img className="max-h-24 max-w-38 content-center" src={species.image ? species.image : "https://cdn-icons-png.flaticon.com/512/47/47415.png"}/></td>
             <td>{species.genus} {species.species}</td>
             <td>{offer.sex}</td>
             <td>{offer.legspan}</td>
             <td>{offer.price}</td>
             <td>
                 <div>{seller.name}</div>
-                {/* {Object.keys(seller.contactDetails).map(key => (
+                 {seller.contactDetails == null ? "No contact details" : Object.keys(seller.contactDetails).map(key => (
                     <div key={key}>
                         {key}: {seller.contactDetails[key]}
                     </div>
-                ))} */}
+                ))} 
             </td>
             <td><Link to={`/editOffer/${offer._id}`} className="inline-block w-full text-center shadow-md text-sm bg-gray-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-gray-600 hover:cursor-pointer">Edit</Link></td>
             <td><button onClick={() => deleteOffer(offer._id)} className="inline-block w-full text-center shadow-md text-sm bg-red-700 text-white rounded-sm px-4 py-1 font-bold hover:bg-red-600 hover:cursor-pointer">Delete</button></td>

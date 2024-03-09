@@ -57,7 +57,7 @@ const EditSellerPage = () => {
                 shipsAnimals: seller.shipsAnimals
             });
             toast.success(`Updated seller successfully`);
-            navigate("/");
+            navigate("/sellers");
             setIsLoading(false);
         }catch (error){
             setIsLoading(false);

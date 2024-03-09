@@ -23,7 +23,7 @@ const EditOfferPage = () => {
         try{
             const response = await axios.get(`${VITE_BACKEND_URL}offers/${id}`);
             console.log(response)
-            setOffer(response)
+            setOffer(response.data)
             setIsLoading(false);
 
         } catch(error){

@@ -28,7 +28,7 @@ const Seller = ({seller, getSellers}) => {
 
     return (
         <>
-            <tr>
+            <tr className="h-16">
             <td>{seller.name}</td>
             <td>{Object.keys(seller.contactDetails).map(key => (
                     <div key={key}>
